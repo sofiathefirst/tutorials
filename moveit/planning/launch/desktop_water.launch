@@ -1,0 +1,14 @@
+<launch>
+	<arg name="robot_ip"/>
+
+	<include file="$(find ur_modern_driver)/launch/ur5_bringup.launch">
+	<arg name="robot_ip" value="$(arg robot_ip)" />
+	</include>
+
+	<include file="$(find ur5_moveit_config)/launch/ur5_moveit_planning_execution.launch">
+	</include>
+
+	<node name="bottle" pkg="object_detect" type="bottle" />    
+	<node name="water" pkg="pr2_moveit_tutorials" type="water"   />
+<!-- Debug Info -->
+</launch>
