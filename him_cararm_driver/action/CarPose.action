@@ -1,0 +1,11 @@
+#goal definition
+float32[] data
+---
+#result definition
+int32 SUCCESSFUL=0
+int32 INVALID_GOAL=-1
+int32 error_code
+string error_string
+---
+#feedback
+float32[] current_data

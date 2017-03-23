@@ -1,0 +1,11 @@
+#goal definition
+geometry_msgs/PoseArray pose_array
+---
+#result definition
+int32 SUCCESSFUL=0
+int32 INVALID_GOAL=-1
+int32 error_code
+string error_string
+---
+#feedback
+geometry_msgs/Pose current_pose

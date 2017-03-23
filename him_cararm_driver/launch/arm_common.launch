@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+  arm robot common bringup.  Starts ur driver node and robot state
+  publisher (translates joint positions to propper tfs).
+  
+  Usage:
+    arm_common.launch
+-->
+<launch>
+  <arg name="fake_execution" />
+  <arg name="with_car" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" unless="$(arg fake_execution)" />
+  <!-- driver -->
+  <node name="him_cararm_driver" pkg="him_cararm_driver" type="him_cararm_driver" output="screen">
+    <param name="fake_execution" type="bool" value="$(arg fake_execution)"/>
+    <param name="with_car" type="bool" value="$(arg with_car)"/>	
+  </node>
+</launch>

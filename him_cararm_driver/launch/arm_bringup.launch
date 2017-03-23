@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+  Universal robot arm launch.  Loads arm robot description (see ur_common.launch
+  for more info)
+
+  Usage:
+    arm_bringup.launch
+-->
+<launch>
+  
+  <arg name="fake_execution" default="true" />
+  <arg name="with_car" default="false" />
+
+  <!-- robot model -->
+  <include file="$(find robot)/launch/arm_upload.launch">
+  </include>
+  
+  <!-- ur common -->
+  <include file="$(find him_cararm_driver)/launch/arm_common.launch">
+    <arg name="fake_execution" default="$(arg fake_execution)" />
+    <arg name="with_car" default="$(arg with_car)" />
+  </include>
+
+</launch>
